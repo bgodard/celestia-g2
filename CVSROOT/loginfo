@@ -24,4 +24,4 @@
 #DEFAULT (echo ""; id; echo %s; date; cat) >> $CVSROOT/CVSROOT/commitlog
 # or
 #DEFAULT (echo ""; id; echo %{sVv}; date; cat) >> $CVSROOT/CVSROOT/commitlog
-^celestia /usr/bin/Mail -s '[celestia CVS]: %s' chris@teyssier.org
+^celestia /usr/bin/Mail -s '%s' celestia-cvs@lists.sourceforge.net
