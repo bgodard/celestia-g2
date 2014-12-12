@@ -3160,12 +3160,20 @@ Orbit* GetCustomOrbit(const string& name)
         if (in.good())
             jpleph = JPLEphemeris::load(in);
         if (jpleph != NULL)
-        {
-            clog << "Loaded DE" << jpleph->getDENumber() <<
-                " ephemeris. Valid from JD" <<
+        {   
+            if (jpleph->getDENumber()!=100) {
+               clog << "Loaded DE" << jpleph->getDENumber();
+            }
+            else {
+               clog << "Loaded INPOP";
+            }
+            clog <<" ephemeris. Valid from JD" <<
                 setprecision(8) <<
                 jpleph->getStartDate() << " to JD" <<
                 jpleph->getEndDate() << '\n';
+            clog << "Ephemeris record size: "<< jpleph->getRecordSize()<< " doubles";
+            if (jpleph->getByteSwap())  clog << " with non-native endianess";   
+            clog << "." << endl;
         }
     }
 
