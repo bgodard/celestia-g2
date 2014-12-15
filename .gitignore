@@ -1,0 +1,9 @@
+# Exclude builded files
+Makefile
+celestia
+config.h
+moc/
+obj/
+rcc/
+qt/
+
