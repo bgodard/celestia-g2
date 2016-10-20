@@ -73,7 +73,8 @@ int main(int argc, char *argv[])
 
     // By default, QString converts the const char * data into Unicode Latin-1 characters.
     // We need to change this to UTF-8 for i18n purpose.
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+    // QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+    // not available in QT5 but QT5 makes UTF-8 default
 
     CelestiaAppWindow window;
 

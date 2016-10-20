@@ -127,6 +127,7 @@ SolarSystemTreeModel::~SolarSystemTreeModel()
 // Call createTreeItem() to build the parallel tree structure
 void SolarSystemTreeModel::buildModel(Star* star, bool _groupByClass)
 {
+    beginResetModel();
     groupByClass = _groupByClass;
 
     if (rootItem != NULL)
@@ -142,7 +143,7 @@ void SolarSystemTreeModel::buildModel(Star* star, bool _groupByClass)
         rootItem->children[0] = createTreeItem(Selection(star), rootItem, 0);
     }
 
-    reset();
+    endResetModel();
 }
 
 
