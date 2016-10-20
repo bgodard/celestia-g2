@@ -7,7 +7,7 @@
 *  A tentative revival of the Celestia project, a real-time space         *
 * simulation that lets you experience our universe in three dimensions.   *
 *                                                                         *
-*  Copyright (c) 2001-2014, Celestia Development Team                     *
+*  Copyright (c) 2001-2016, Celestia Development Team                     *
 *                                                                         *
 *-------------------------------------------------------------------------*
 *  Celestia web site: http://www.shatters.net/celestia/                   *
@@ -47,8 +47,7 @@ https://svn.code.sf.net/p/celestia/code was cloned into a git repository
 using svn2git (https://github.com/nirvdrum/svn2git) and pushed to github.
 The first feature which differentiates Celestia-g2 from Celestia is the
 support of a larger set of JPL DE ephemerides and compatible INPOP
-ephemerides. This is also the only difference in features at the time this
-text is being written.
+ephemerides. The second one is the port of the QT4 GUI to QT5.
 
 
 PROJECT GOALS
@@ -58,10 +57,10 @@ Portability of the code is a development goal, however without developpers
 and testers for other platforms, portability cannot be guaranteed.
 
 The support of the platform specific frontends (Gnome, KDE, Win32...) is
-currently dropped in favor of the cross-platform QT4 UI.
+currently dropped in favor of the cross-platform QT UI (now QT5).
 
 The main goals of the project is to add features to Celestia. It is also
-desired to port to QT5 and to Wayland (possibly also Mir).
+desired to port to Lua 5.3+ and to Wayland (possibly also Mir).
 
 
 PROGRAM LICENSE
