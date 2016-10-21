@@ -47,7 +47,7 @@ CELUTIL_HEADERS = \
 CELMATH_HEADERS = \
     ../../../celmath/mathlib.h
 
-INCLUDEPATH += ../../common
+INCLUDEPATH += ../common
 INCLUDEPATH += ../../..
 INCLUDEPATH += ../../../../thirdparty/Eigen
     
