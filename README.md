@@ -60,7 +60,10 @@ The support of the platform specific frontends (Gnome, KDE, Win32...) is
 currently dropped in favor of the cross-platform QT UI (now QT5).
 
 The main goals of the project is to add features to Celestia. It is also
-desired to port to Lua 5.3+ and to Wayland (possibly also Mir).
+desired to port to Lua 5.3+ (possibly integrating the lua sources into the
+celestia source tree) and to Wayland (possibly also Mir). NAIF spice source 
+may also be included into Celestia sources in the future for easier 
+installation/build.
 
 
 PROGRAM LICENSE
