@@ -296,6 +296,7 @@ ENGINE_HEADERS = \
     src/celengine/virtualtex.h \
     src/celengine/visibleregion.h
 
+# comment this to build without cspice support    
 SPICE_SOURCES = \
     src/celephem/spiceinterface.cpp \
     src/celephem/spiceorbit.cpp \
@@ -575,19 +576,27 @@ win32 {
 }
 
 unix {
+    # required for videocapture
     SOURCES += src/celestia/oggtheoracapture.cpp
     HEADERS += src/celestia/oggtheoracapture.h
     DEFINES += THEORA
 
     CONFIG += link_pkgconfig
 
-    LUALIST = lua5.1 lua
+    # find pkg-config for lua5.1. Version 5.2+ will not work !!!
+    LUALIST = lua lua51 lua5.1
     for(libpc, LUALIST):system(pkg-config --exists $${libpc}):LUAPC = $${libpc}
     isEmpty (LUAPC) {error("No shared Lua library found!")}
 
+    # use pkg-config for glu, lua, libpng and theora
     PKGCONFIG += glu $$LUAPC libpng theora
-    INCLUDEPATH += /usr/local/cspice/include
-    LIBS += -ljpeg /usr/local/cspice/lib/cspice.a
+
+    # jpeg library
+    LIBS += -ljpeg
+    
+    # specify where cspice from NAIF is installed (to build cspice support)
+    INCLUDEPATH += /opt/cspice/include
+    LIBS += /opt/cspice/lib/cspice.a
 }
 
 macx {
